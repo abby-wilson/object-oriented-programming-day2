@@ -18,8 +18,6 @@ class BankAccount
     @balance -= (withdraw)
   end
 
-
-
   def self.create
     @@accounts << BankAccount.new
     return @@accounts.last
@@ -36,8 +34,10 @@ class BankAccount
   def self.interest_times
     @@accounts.each do |a|
       a.balance = @@accounts *= (@@interest_rate + 1)
+    end
     return a.balance
-  end
+  end 
+
   end
 
 
@@ -50,3 +50,4 @@ my_bankaccount = BankAccount.create
 savings_account = BankAccount.create
 puts my_bankaccount.balance
 puts savings_account.balance
+puts savings_account.deposit(300)
